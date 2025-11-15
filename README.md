@@ -9,8 +9,7 @@ Proyecto universitario con Django y Oracle Database.
 pip install -r requirements.txt
 
 # 2. Configurar Oracle
-copy appclientes\conexion.example.py appclientes\conexion.py
-# Editar conexion.py con tus credenciales
+# Editar appclientes/conexion.py con tus credenciales
 
 # 3. Ejecutar servidor
 python manage.py runserver
@@ -36,18 +35,28 @@ python manage.py runserver
 
 ```
 proyecto_abogados/
-├── manage.py
-├── requirements.txt
-├── appclientes/
-│   ├── views.py
-│   ├── urls.py
-│   ├── conexion.py
-│   └── conexion.example.py
-├── templates/
-│   └── registro_cliente.html
-└── BBDD_Abogados/
-    ├── AbogadoModulo.sql
-    └── INSERT.sql
+├── 📄 manage.py                    # Comando Django
+├── 📄 requirements.txt             # Dependencias Python
+├── 📄 README.md                    # Esta documentación
+├── 📄 .gitignore                   # Archivos ignorados por Git
+├── 📁 appclientes/                 # App principal
+│   ├── __init__.py
+│   ├── views.py                    # Lógica de negocio
+│   ├── urls.py                     # URLs de la app
+│   └── conexion.py                 # Credenciales Oracle
+├── 📁 static/                      # Archivos estáticos
+│   ├── styles.css                  # Estilos CSS
+│   └── scripts.js                  # JavaScript
+├── 📁 templates/                   # Plantillas HTML
+│   └── registro_cliente.html       # Interfaz principal
+├── 📁 BBDD_Abogados/               # Scripts SQL
+│   ├── AbogadoModulo.sql           # Crear tablas
+│   └── INSERT.sql                  # Datos de prueba
+└── 📁 proyecto_abogados/           # Configuración Django
+    ├── __init__.py
+    ├── settings.py                 # Configuración
+    ├── urls.py                     # URLs principales
+    └── wsgi.py                     # Para despliegue
 ```
 
 ## 🔧 Requisitos
@@ -59,9 +68,11 @@ proyecto_abogados/
 
 ## 📝 Notas
 
-- NO usa Django ORM, usa SQL directo
-- Configurar `conexion.py` con credenciales de Oracle
+- NO usa Django ORM, usa SQL directo con Oracle
+- Configurar `appclientes/conexion.py` con credenciales de Oracle
 - Puerto por defecto: 8000
+- Archivos CSS y JavaScript separados para mejor organización
+- Proyecto simplificado al máximo para fines universitarios
 
 ## 🐛 Problemas Comunes
 
