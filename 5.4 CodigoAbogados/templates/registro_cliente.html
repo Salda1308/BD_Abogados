@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">  
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+    <title>Registro Cliente</title>  
+    {% load static %}  <!-- Carga archivos fijos -->
+    <link rel="stylesheet" href="{% static 'styles.css' %}">  <!-- Conecta con los estilos -->
+</head>
+<body>
+    <div class="container"> 
+        <div class="titulo">REGISTRO CLIENTE</div>  
+
+        <div class="campos">  
+            <div class="fila">  
+                <div class="etiqueta">Código:</div>
+                <div class="campo">
+                    <input type="text" id="codigo" name="codigo" placeholder="Escribe el código">  
+                    <div class="busqueda" onclick="buscarCliente()">🔍</div>  
+                </div>
+            </div>
+
+            <div class="fila">  
+                <div class="etiqueta">Nombre:</div>
+                <div class="campo">
+                    <input type="text" id="nombre" name="nombre" placeholder="Escribe el nombre">  
+                </div>
+            </div>
+
+            <div class="fila">  
+                <div class="etiqueta">Apellido:</div>
+                <div class="campo">
+                    <input type="text" id="apellido" name="apellido" placeholder="Escribe el apellido">  
+                </div>
+            </div>
+
+            <div class="fila">  
+                <div class="etiqueta">N° Documento:</div>
+                <div class="campo">
+                    <input type="text" id="documento" name="documento" placeholder="Escribe el número">  
+                </div>
+            </div>
+
+            <div class="fila">  
+                <div class="etiqueta">Tipo Documento:</div>
+                <div class="campo">
+                    <select id="tipoDocumento" name="tipoDocumento">  
+                        <option value="">Cargando...</option>  
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        <div class="boton-guardar">  
+            <button type="button" class="btn btn-primary" onclick="guardarCliente()">Guardar</button>  
+        </div>
+
+        <div id="message" class="message"></div>  
+    </div>
+
+    <script src="{% static 'scripts.js' %}"></script> 
+</body>
+</html>
